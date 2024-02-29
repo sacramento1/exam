@@ -1,0 +1,11 @@
+<h3>Update product</h3>
+    <form method="post" enctype="multipart/form-data" action="{% url 'liberty:update' pk=item.pk %}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-5">
+          
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Update</button>
+       </div>
+    </div>
+</form>

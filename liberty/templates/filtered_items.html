@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <h2>Filtered Products</h2>
+    <div class="row">
+        {% if items %}
+            {% for item in items %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                            <p class="card-text">{{ item.body }}</p>
+                            <p class="card-text"><small class="text-muted">Category: {{ item.category }}</small></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col">
+                <p>No items found.</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
